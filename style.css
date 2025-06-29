@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #020024;
+    /* background: linear-gradient(180deg, rgba(2, 0, 36, 1) 10%, rgba(9, 9, 121, 1) 18%, rgb(0, 213, 255) 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    /* background-color: rgba(255, 0, 0, 0.342); */
+    align-items: center;
+    justify-content: space-evenly;
+    /* position: fixed;
+    top: 0; */
+}
+
+.logo a {
+    display: flex;
+    width: 250px;
+    /* background-color: rgba(25, 0, 255, 0.26); */
+    padding: 10px;
+    font-size: 30px;
+}
+
+.topbar {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    margin-left: auto;
+    /* background-color: rgba(25, 0, 255, 0.212); */
+    list-style: none;
+}
+
+.sidebar {
+    /* background-color: rgba(255, 255, 255, 0.15); */
+    backdrop-filter: blur(12px);
+    box-shadow: -10px 0 10px rgba(141, 120, 120, 0.1);
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    flex-direction: column;
+    z-index: 1000;
+    list-style: none;
+}
+
+.content {
+    padding: 20px 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav a {
+    display: flex;
+    height: 80%;
+    width: 80px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li {
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+.sidebar {
+    display: none;
+}
+
+nav a:hover {
+    background-color: rgb(0, 213, 255);
+    border-radius: 5px;
+    color: black;
+}
+
+@media(max-width: 700px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .topbar {
+        width: auto;
+    }
+
+    .menu-button {
+        display: block;
+        margin-right: 20px;
+    }
+}
+
+.home-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 23px;
+}
+
+.home-section div {
+    width: 30%;
+}
+
+.home-left {
+    height: auto;
+    width: auto;
+    background: red;
+}
+
+/* 
+.right-section {} */
+
+#profile-image {
+    width: 100%;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.856));
+    margin: 50px 0;
+}
