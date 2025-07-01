@@ -6,9 +6,9 @@
 
 body {
     min-height: 100vh;
-    background: #020024;
-    /* background: linear-gradient(180deg, rgba(2, 0, 36, 1) 10%, rgba(9, 9, 121, 1) 18%, rgb(0, 213, 255) 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    background: #242931;
+    /* background: linear-gradient(180deg, rgba(2, 0, 36, 1) 10%, rgba(9, 9, 121, 1) 18%, rgb(0, 7, 70) 100%); */
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -27,7 +27,7 @@ nav {
     width: 250px;
     /* background-color: rgba(25, 0, 255, 0.26); */
     padding: 10px;
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .topbar {
@@ -53,7 +53,6 @@ nav {
     position: fixed;
     flex-direction: column;
     z-index: 1000;
-    list-style: none;
 }
 
 .content {
@@ -63,6 +62,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    list-style: none;
 }
 
 
@@ -93,10 +93,68 @@ nav a {
     display: none;
 }
 
+nav a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.svg-icon:hover path,
 nav a:hover {
-    background-color: rgb(0, 213, 255);
-    border-radius: 5px;
-    color: black;
+    fill: #0bddac;
+    color: #0bddac;
+    /* font-weight: 700; */
+    transform: scale(1.05, 1.05);
+    text-shadow:
+        0 0 5px #0bddac
+}
+
+.home-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 23px;
+}
+
+
+.home-right {
+    width: 30%;
+}
+
+.home-left {
+    height: auto;
+    width: 50%;
+    padding: 50px 0;
+    /* background: rgba(255, 0, 0, 0.397); */
+    color: #fff;
+}
+
+.name {
+    font-size: 36px;
+    color: #0bddac;
+    text-shadow:
+        0 0 5px #0bddac
+}
+
+.greet {
+    margin-top: 10px 0 0;
+    color: #fff;
+    font-size: 20px;
+
+}
+
+.headline {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.about {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#profile-image {
+    width: 100%;
+    margin: 20px 0;
 }
 
 @media(max-width: 700px) {
@@ -112,29 +170,18 @@ nav a:hover {
         display: block;
         margin-right: 20px;
     }
-}
 
-.home-section {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 23px;
-}
+    .home-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.home-section div {
-    width: 30%;
-}
+    .home-section div {
+        width: 90%;
+    }
 
-.home-left {
-    height: auto;
-    width: auto;
-    background: red;
-}
-
-/* 
-.right-section {} */
-
-#profile-image {
-    width: 100%;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.856));
-    margin: 50px 0;
+    #profile-image {
+        width: 60%;
+    }
 }

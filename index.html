@@ -6,6 +6,7 @@
     <title>Hasnain Shahid | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -22,19 +23,21 @@
             <li class="hideOnMobile"><a href="#">Contact</a></li>
             <li class="menu-button" onclick=showSidebar()>
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+                        width="26">
                         <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
                     </svg>
                 </a>
             </li>
         </ul>
 
-        <ul class="sidebar">
-            <div class="content">
+        <div class="sidebar">
+            <ul class="content">
 
                 <li onclick=hideSidebar()>
                     <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+                            width="26">
                             <path
                                 d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
                                 fill="white" />
@@ -45,16 +48,23 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Contact</a></li>
-            </div>
-        </ul>
+            </ul>
+        </div>
     </nav>
 
     <section class="home-section">
         <div class="home-left">
-            left
+            <p class="greet">Hello, I'm</p>
+            <p class="name">Hasnain Shahid</p>
+            <p class="headline"><i>Python Developer | Data Operator</i></p>
+            <p class="about">
+                passionate Python Developer with over 2 years of experience in building powerful automation tools,
+                task workflows and web automation solutions. Also an expert in data entry and process optimization.
+            </p>
         </div>
         <div class="home-right">
-            <img src="assets/dp.png" alt="Hasnain Shahid" id="profile-image">
+            <img draggable="false" src="assets/portfolio_img.png" alt="Hasnain Shahid" id="profile-image"
+                oncontextmenu="return false;">
         </div>
     </section>
     <section id="about"></section>
