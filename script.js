@@ -8,42 +8,6 @@ function hideSidebar() {
     document.removeEventListener('click', handleOutsideClick);
 }
 
-function lockScroll() {
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = scrollBarWidth + "px";  // Compensate for scrollbar
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-        sidebar.style.paddingRight = scrollBarWidth + "px";
-    }
-}
-
-function unlockScroll() {
-    document.body.style.overflow = "";
-    document.body.style.paddingRight = "";  // Reset
-    const sidebar = document.querySelector('.sidebar');
-    if (sidebar) {
-        sidebar.style.paddingRight = "";
-    }
-}
-
-const menu = document.querySelector(".sidebar");
-// Desktop hover
-menu.addEventListener("mouseenter", () => {
-    lockScroll();
-});
-menu.addEventListener("mouseleave", () => {
-    unlockScroll();
-});
-
-// Mobile touch
-menu.addEventListener("touchstart", () => {
-    lockScroll();
-});
-menu.addEventListener("touchend", () => {
-    unlockScroll();
-});
-
 // Close on link click inside sidebar
 document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', hideSidebar);
