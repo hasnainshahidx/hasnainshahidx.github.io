@@ -1,25 +1,70 @@
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Scrollbar thumb (draggable part) */
+::-webkit-scrollbar-thumb {
+    background-color: #b6bebc;
+    border-radius: 10px;
+}
+
+/* Scrollbar track area */
+::-webkit-scrollbar-track {
+    background-color: #171b20;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0bddac;
+}
+
+
 body {
     min-height: 100vh;
     background: #242931;
-    /* background: linear-gradient(180deg, rgba(2, 0, 36, 1) 10%, rgba(9, 9, 121, 1) 18%, rgb(0, 7, 70) 100%); */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
 
 nav {
+    background: #242931;
+    transition: transform 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
     display: flex;
     width: 100%;
-    height: 60px;
-    /* background-color: rgba(255, 0, 0, 0.342); */
+    height: 70px;
     align-items: center;
     justify-content: space-evenly;
-    /* position: fixed;
-    top: 0; */
+
+    a {
+        display: flex;
+        height: 80%;
+        width: 80px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.menu-button {
+    display: none;
 }
 
 .logo a {
@@ -43,7 +88,6 @@ nav {
 }
 
 .sidebar {
-    /* background-color: rgba(255, 255, 255, 0.15); */
     backdrop-filter: blur(12px);
     box-shadow: -10px 0 10px rgba(141, 120, 120, 0.1);
     top: 0;
@@ -53,11 +97,22 @@ nav {
     position: fixed;
     flex-direction: column;
     z-index: 1000;
+
+    /* Animate sidebar from right */
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    /* Always use flex, control visibility with transform */
 }
 
-.content {
+.sidebar.active {
+    transform: translateX(0);
+    /* Slide into view */
+}
+
+.sidebar .content {
     padding: 20px 10px;
-    height: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,57 +120,39 @@ nav {
     list-style: none;
 }
 
-
-nav a {
+.sidebar a {
     display: flex;
     height: 80%;
-    width: 80px;
+    width: 100%;
     text-decoration: none;
     color: rgb(255, 255, 255);
     align-items: center;
     justify-content: center;
 }
 
-.sidebar li {
-    width: 100%;
-    height: 100%;
-}
 
-.sidebar a {
-    width: 100%;
-}
 
-.menu-button {
-    display: none;
-}
-
-.sidebar {
-    display: none;
-}
-
-nav a {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
+.sidebar a:hover,
 .svg-icon:hover path,
 nav a:hover {
+    cursor: pointer;
     fill: #0bddac;
     color: #0bddac;
-    /* font-weight: 700; */
-    transform: scale(1.05, 1.05);
-    text-shadow:
-        0 0 5px #0bddac
+    /* font-weight: 500; */
+    /* text-shadow:
+        0 0 3px #0bddac */
 }
 
 .home-section {
     display: flex;
-    justify-content: space-around;
-    margin-top: 23px;
+    justify-content: space-evenly;
+    margin-top: 90px;
 }
 
 
 .home-right {
-    width: 30%;
+    width: 25%;
+    height: auto;
 }
 
 .home-left {
@@ -127,10 +164,12 @@ nav a:hover {
 }
 
 .name {
-    font-size: 36px;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 10px 0;
     color: #0bddac;
     text-shadow:
-        0 0 5px #0bddac
+        0 0 3px #0bddac
 }
 
 .greet {
@@ -142,18 +181,127 @@ nav a:hover {
 
 .headline {
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
 .about {
-    font-size: 14px;
-    color: #fff;
+    font-size: 16px;
+    color: #d8d7d7;
+    line-height: 1.8;
 }
 
 #profile-image {
     width: 100%;
     margin: 20px 0;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #171b20;
+}
+
+.about-section h1 {
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+.grid-container {
+    width: min(70rem, 80%);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 3rem;
+}
+
+.card {
+    /* position: relative; */
+    opacity: 0;
+    /* transform: translateX(100%); */
+
+    --grad: #0bddac, #6e8da5;
+    padding: 2rem;
+    background: #242931;
+    border-radius: 2rem;
+    gap: 1rem;
+    grid-template: 'icon icon' 'title title' 'content content' 'bar bar' / 1fr auto;
+    font-family: system-ui, sans-serif;
+    color: #ffffff;
+    box-shadow:
+        inset -2px 2px #0bddac,
+        -10px 10px 40px rgba(11, 218, 166, 0.226);
+
+    .title {
+        font-size: 1.3rem;
+        grid-area: title;
+        align-self: end;
+        text-transform: uppercase;
+        font-weight: 500;
+        word-break: break-all;
+        text-align: center;
+    }
+
+    .icon {
+        grid-area: icon;
+        text-align: center;
+        font-size: 3rem;
+        padding-bottom: 5px;
+
+        >i {
+            color: transparent;
+            background: linear-gradient(to right, var(--grad));
+            background-clip: text;
+        }
+    }
+
+    .content {
+        grid-area: content;
+        text-align: center;
+        color: #d8d7d7;
+
+        &>*:first-child {
+            margin-top: 0rem
+        }
+
+        &>*:last-child {
+            margin-bottom: 0rem
+        }
+    }
+
+    &::after {
+        content: "";
+        grid-area: bar;
+        height: 2px;
+        background-image: linear-gradient(90deg, var(--grad));
+        /*     margin-inline: -1.5rem; */
+    }
+
+}
+
+/* class added when in view */
+.card.animate {
+    animation: slideInRight 0.6s forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.navigation .active {
+    color: #0bddac;
 }
 
 @media(max-width: 700px) {

@@ -6,7 +6,11 @@
     <title>Hasnain Shahid | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -16,13 +20,13 @@
             <a href="#">Hasnain Shahid</a>
         </div>
 
-        <ul class="topbar">
-            <li class="hideOnMobile"><a href="#">Home</a></li>
-            <li class="hideOnMobile"><a href="#">About</a></li>
-            <li class="hideOnMobile"><a href="#">Projects</a></li>
-            <li class="hideOnMobile"><a href="#">Contact</a></li>
+        <ul class="topbar navigation">
+            <li class="hideOnMobile"><a href="#about">About</a></li>
+            <li class="hideOnMobile"><a href="#projects">Projects</a></li>
+            <li class="hideOnMobile"><a href="#resume">Resume</a></li>
+            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="menu-button" onclick=showSidebar()>
-                <a href="#">
+                <a>
                     <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
                         width="26">
                         <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" fill="white" />
@@ -30,35 +34,35 @@
                 </a>
             </li>
         </ul>
-
-        <div class="sidebar">
-            <ul class="content">
-
-                <li onclick=hideSidebar()>
-                    <a href="#">
-                        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
-                            width="26">
-                            <path
-                                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-                                fill="white" />
-                        </svg>
-                    </a>
-                </li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
     </nav>
+
+    <div class="sidebar no-scroll-area">
+        <ul class="content navigation">
+
+            <li onclick=hideSidebar()>
+                <a>
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960"
+                        width="26">
+                        <path
+                            d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <section class="home-section">
         <div class="home-left">
             <p class="greet">Hello, I'm</p>
-            <p class="name">Hasnain Shahid</p>
+            <h1 class="name">Hasnain Shahid</h1>
             <p class="headline"><i>Python Developer | Data Operator</i></p>
             <p class="about">
-                passionate Python Developer with over 2 years of experience in building powerful automation tools,
+                A passionate Python Developer with over 2 years of experience in building powerful automation tools,
                 task workflows and web automation solutions. Also an expert in data entry and process optimization.
             </p>
         </div>
@@ -67,9 +71,50 @@
                 oncontextmenu="return false;">
         </div>
     </section>
-    <section id="about"></section>
-    <section id="projects"> ... </section>
-    <section id="contact"> ... </section>
+    <section id="about" class="about-section">
+        <h1>What I do</h1>
+
+        <div class="grid-container">
+
+            <!-- Web Automation -->
+            <div class="card">
+                <div class="icon"><i class="fa-thin fa-globe"></i></div>
+                <div class="title">Web Automation</div>
+                <div class="content">
+                    <p>I build Python and JavaScript-based tools to automate repetitive web tasks like form submissions,
+                        navigation, testing, and browser workflows efficiently.</p>
+                </div>
+            </div>
+
+            <!-- Data Operations -->
+            <div class="card">
+                <div class="icon"><i class="fa-thin fa-database"></i></div>
+                <div class="title">Data Operations</div>
+                <div class="content">
+                    <p>I handle accurate data entry, cleaning, and analysis using Microsoft Excel and scripts, ensuring
+                        consistent, well-structured, and high-quality datasets.</p>
+                </div>
+            </div>
+
+            <!-- Bot Development -->
+            <div class="card">
+                <div class="icon"><i class="fa-thin fa-robot"></i></div>
+                <div class="title">Bot Development</div>
+                <div class="content">
+                    <p>I develop intelligent bots for complex tasks like web scraping, monitoring, and API integration —
+                        designed to operate undetected and perform reliably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-section"> ... </section>
+    <section id="resume" class="resume-section"> ... </section>
+    <section id="contact" class="contact-section"> ... </section>
+    <footer>
+        <p>
+            &copy; 2025 Hasnain Shahid. All rights reserved. | <a href="https://github.com/hasnainshahidx">GitHub</a>
+        </p>
+    </footer>
 </body>
 
 </html>
