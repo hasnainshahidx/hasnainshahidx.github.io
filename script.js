@@ -2,23 +2,46 @@ function showSidebar() {
     document.querySelector('.sidebar').classList.add('active');
     document.addEventListener('click', handleOutsideClick);
 }
+
 function hideSidebar() {
     document.querySelector('.sidebar').classList.remove('active');
     document.removeEventListener('click', handleOutsideClick);
 }
 
-function preventScroll(e) {
-    e.preventDefault();
+function lockScroll() {
+    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = scrollBarWidth + "px";  // Compensate for scrollbar
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.style.paddingRight = scrollBarWidth + "px";
+    }
 }
 
-const noScrollArea = document.querySelector('.no-scroll-area');
-noScrollArea.addEventListener('mouseenter', () => {
-    window.addEventListener('wheel', preventScroll, { passive: false });
-    window.addEventListener('touchmove', preventScroll, { passive: false });
+function unlockScroll() {
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";  // Reset
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+        sidebar.style.paddingRight = "";
+    }
+}
+
+const menu = document.querySelector(".sidebar");
+// Desktop hover
+menu.addEventListener("mouseenter", () => {
+    lockScroll();
 });
-noScrollArea.addEventListener('mouseleave', () => {
-    window.removeEventListener('wheel', preventScroll, { passive: false });
-    window.removeEventListener('touchmove', preventScroll, { passive: false });
+menu.addEventListener("mouseleave", () => {
+    unlockScroll();
+});
+
+// Mobile touch
+menu.addEventListener("touchstart", () => {
+    lockScroll();
+});
+menu.addEventListener("touchend", () => {
+    unlockScroll();
 });
 
 // Close on link click inside sidebar
