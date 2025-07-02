@@ -228,6 +228,7 @@ nav a:hover {
     padding: 2rem;
     background: #242931;
     border-radius: 2rem;
+    display: grid;
     gap: 1rem;
     grid-template: 'icon icon' 'title title' 'content content' 'bar bar' / 1fr auto;
     font-family: system-ui, sans-serif;
