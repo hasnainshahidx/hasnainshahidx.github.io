@@ -47,9 +47,9 @@ window.addEventListener("scroll", () => {
 
     lastScrollY = window.scrollY;
 
-    timeout = setTimeout(() => {
-        if (window.scrollY >= 50) hideNav(); // Only hide if not at top
-    }, 1000);
+    // timeout = setTimeout(() => {
+    //     if (window.scrollY >= 50) hideNav(); // Only hide if not at top
+    // }, 1000);
 });
 
 const sections = document.querySelectorAll("section[id]");
