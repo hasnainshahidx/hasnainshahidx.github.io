@@ -1,4 +1,16 @@
-function showSidebar() {
+const headings = document.querySelectorAll('h1');
+
+const h1Observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            h1Observer.unobserve(entry.target); // only once
+        }
+    });
+}, {
+    threshold: 0.5
+});
+headings.forEach(h1 => h1Observer.observe(h1)); function showSidebar() {
     document.querySelector('.sidebar').classList.add('active');
     document.addEventListener('click', handleOutsideClick);
 }
@@ -123,3 +135,19 @@ const skillObserver = new IntersectionObserver(entries => {
 skills.forEach(skill => {
     skillObserver.observe(skill);
 });
+
+
+const items = document.querySelectorAll('.education-item');
+
+const educationObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.classList.add('animate');  // custom trigger
+            educationObserver.unobserve(entry.target); // Animate only once
+        }
+    });
+}, {
+    threshold: 0.6 // 60% visible
+});
+items.forEach(item => educationObserver.observe(item));
