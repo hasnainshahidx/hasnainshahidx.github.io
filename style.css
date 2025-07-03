@@ -328,7 +328,6 @@ h1.animate {
         color: #ffffff;
         font-size: 30px;
         margin-bottom: 40px;
-        margin-top: 20px;
     }
 
     .skill {
@@ -496,6 +495,13 @@ h1.animate {
         width: 60%;
     }
 
+    .card,
+    .education-item,
+    .education-section,
+    #skills {
+        padding: 3rem 1rem;
+
+    }
 }
 
 footer p {
