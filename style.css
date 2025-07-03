@@ -103,7 +103,6 @@ nav {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     display: flex;
-    /* Always use flex, control visibility with transform */
 }
 
 .sidebar.active {
@@ -139,9 +138,6 @@ nav a:hover {
     cursor: pointer;
     fill: #0bddac;
     color: #0bddac;
-    /* font-weight: 500; */
-    /* text-shadow:
-        0 0 3px #0bddac */
 }
 
 @keyframes fadeInText {
@@ -182,7 +178,6 @@ h1.animate {
     height: auto;
     width: 50%;
     padding: 50px 0 0;
-    /* background: rgba(255, 0, 0, 0.397); */
     color: #fff;
 
     .name {
@@ -224,7 +219,7 @@ h1.animate {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
+    padding: 4rem 0;
     background: #171b20;
 
     h1 {
@@ -243,10 +238,7 @@ h1.animate {
 }
 
 .card {
-    /* position: relative; */
     opacity: 0;
-    /* transform: translateX(100%); */
-
     --grad: #0bddac, #6e8da5;
     padding: 2rem;
     background: #242931;
@@ -254,7 +246,6 @@ h1.animate {
     display: grid;
     gap: 1rem;
     grid-template: 'icon icon' 'title title' 'content content' 'bar bar' / 1fr auto;
-    /* font-family: system-ui, sans-serif; */
     color: #ffffff;
     box-shadow:
         inset -2px 2px #0bddac,
@@ -330,7 +321,7 @@ h1.animate {
 
 /* Skills Section Styles */
 #skills {
-    padding: 40px;
+    padding: 4rem;
     background: #242931;
 
     h1 {
@@ -373,54 +364,64 @@ h1.animate {
 .education-section {
     padding: 40px;
     background: #171b20;
+    height: auto;
+    padding: 4rem;
 
     h1 {
         color: #ffffff;
         font-size: 30px;
         margin-bottom: 40px;
     }
+}
 
-    .education-container {
-        display: flex;
-        justify-content: space-evenly;
+.education-container {
+    width: min(70rem, 80%);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 5rem;
+}
 
-        .education-item {
-            background: #242931;
-            --grad: #0bddac, #6e8da5;
-            box-shadow:
-                inset -2px 2px #0bddac,
-                -10px 10px 40px rgba(11, 218, 166, 0.226);
-            padding: 20px;
-            border-radius: 10px;
-            height: 300px;
-            width: 500px;
-            color: #ffffff;
-            text-align: center;
-            margin: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+.education-item {
+    opacity: 0;
+    --grad: #0bddac, #6e8da5;
+    padding: 2rem;
+    background: #242931;
+    border-radius: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template: 'icon icon' 'title title' 'content content' 'bar bar' / 1fr auto;
+    color: #ffffff;
+    box-shadow:
+        inset -2px 2px #0bddac,
+        -10px 10px 40px rgba(11, 218, 166, 0.226);
 
+    img {
+        grid-area: icon;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-            img {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
+    h2 {
+        grid-area: title;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
 
-            h2 {
-                font-size: 20px;
-                margin-bottom: 10px;
-            }
+    p {
+        grid-area: content;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
 
-            p {
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-        }
+    &::after {
+        content: "";
+        grid-area: bar;
+        height: 2px;
+        background-image: linear-gradient(90deg, var(--grad));
+        /*     margin-inline: -1.5rem; */
     }
 }
 
@@ -495,10 +496,6 @@ h1.animate {
         width: 60%;
     }
 
-    .education-container {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 footer p {

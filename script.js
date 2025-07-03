@@ -9,7 +9,7 @@ const h1Observer = new IntersectionObserver(entries => {
         }
     });
 }, {
-    threshold: 0.5
+    threshold: 1
 });
 headings.forEach(h1 => h1Observer.observe(h1)); function showSidebar() {
     document.querySelector('.sidebar').classList.add('active');
