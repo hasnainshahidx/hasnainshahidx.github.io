@@ -11,13 +11,18 @@ const h1Observer = new IntersectionObserver(entries => {
 }, {
     threshold: 1
 });
-headings.forEach(h1 => h1Observer.observe(h1)); function showSidebar() {
-    document.querySelector('.sidebar').classList.add('active');
+headings.forEach(h1 => h1Observer.observe(h1));
+
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('active');
+    sidebar.classList.add('sidebar-shadow'); // Add shadow
     document.addEventListener('click', handleOutsideClick);
 }
-
 function hideSidebar() {
-    document.querySelector('.sidebar').classList.remove('active');
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.remove('active');
+    sidebar.classList.remove('sidebar-shadow'); // Remove shadow
     document.removeEventListener('click', handleOutsideClick);
 }
 
