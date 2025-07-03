@@ -46,38 +46,38 @@ window.addEventListener("scroll", () => {
     }
 
     lastScrollY = window.scrollY;
-
-    // timeout = setTimeout(() => {
-    //     if (window.scrollY >= 50) hideNav(); // Only hide if not at top
-    // }, 1000);
 });
 
-const sections = document.querySelectorAll("section[id]");
-window.addEventListener("scroll", navHighlighter);
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navigation a");
 
-function navHighlighter() {
-    const scrollY = window.pageYOffset;
+window.addEventListener("scroll", () => {
+    let activeClass = null;
 
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        const sectionId = section.getAttribute("id");
-
-        // Section is considered active if 50% or more of it is in the viewport
         const isHalfVisible = rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
 
-        const navLinks = document.querySelectorAll(`.navigation a[href*="${sectionId}"]`);
-        navLinks.forEach(link => {
-            if (isHalfVisible) {
+        if (isHalfVisible) {
+            // Use the first class as identifier (e.g., "about", "projects", etc.)
+            activeClass = section.classList[0];
+        }
+    });
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (href) {
+            const cleanHref = href.replace("#", "");
+            if (cleanHref === activeClass) {
                 link.classList.add("active");
             } else {
                 link.classList.remove("active");
             }
-        });
+        }
     });
-}
+});
 
 const cards = document.querySelectorAll('.card');
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
@@ -90,5 +90,36 @@ const observer = new IntersectionObserver((entries) => {
 }, {
     threshold: 0.2
 });
-
 cards.forEach(card => observer.observe(card));
+
+const skills = document.querySelectorAll('.skill-level');
+const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const skill = entry.target;
+            const target = parseInt(skill.dataset.skill);
+            skill.style.width = target + '%';
+
+            // Count-up percentage animation
+            let current = 0;
+            const speed = 15;
+
+            const counter = setInterval(() => {
+                if (current >= target) {
+                    clearInterval(counter);
+                    skill.textContent = target + '%';
+                } else {
+                    current++;
+                    skill.textContent = current + '%';
+                }
+            }, speed);
+
+            skillObserver.unobserve(skill);
+        }
+    });
+}, {
+    threshold: 0.6
+});
+skills.forEach(skill => {
+    skillObserver.observe(skill);
+});
