@@ -1,4 +1,7 @@
-// document content ready
+function scrollToSection(section) {
+    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+}
+
 const headings = document.querySelectorAll('h1');
 
 const h1Observer = new IntersectionObserver(entries => {
