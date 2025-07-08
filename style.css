@@ -91,9 +91,9 @@ nav {
 
         #logo-txt {
             /* background-color: #101d08b7; */
-            position: relative;
+            /* position: relative;
             display: inline-block;
-            overflow: hidden;
+            overflow: hidden; */
 
             width: auto;
             height: 100%;
@@ -108,7 +108,7 @@ nav {
 }
 
 /* Curtain overlay */
-#logo-txt::before {
+/* #logo-txt::before {
     content: '';
     position: absolute;
     top: 0;
@@ -119,12 +119,12 @@ nav {
     z-index: 2;
     transform: translateX(0);
     transition: transform 1s ease-out;
-}
+} */
 
 /* Reveal class - slides curtain away */
-#logo-txt.reveal::before {
+/* #logo-txt.reveal::before {
     transform: translateX(100%);
-}
+} */
 
 .topbar {
     color: rgb(255, 255, 255);

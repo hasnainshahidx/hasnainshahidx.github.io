@@ -2,19 +2,19 @@ function scrollToSection(section) {
     document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
 }
 
-const logoText = document.querySelector('#logo-txt');
+// const logoText = document.querySelector('#logo-txt');
 
-const logoObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-            logoObserver.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.5 // When half visible
-});
-logoObserver.observe(logoText);
+// const logoObserver = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('reveal');
+//             logoObserver.unobserve(entry.target);
+//         }
+//     });
+// }, {
+//     threshold: 0.5 // When half visible
+// });
+// logoObserver.observe(logoText);
 
 
 const headings = document.querySelectorAll('h1');
