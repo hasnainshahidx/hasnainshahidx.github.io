@@ -2,8 +2,22 @@ function scrollToSection(section) {
     document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
 }
 
-const headings = document.querySelectorAll('h1');
+const logoText = document.querySelector('#logo-txt');
 
+const logoObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+            logoObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.5 // When half visible
+});
+logoObserver.observe(logoText);
+
+
+const headings = document.querySelectorAll('h1');
 const h1Observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -160,3 +174,18 @@ const educationObserver = new IntersectionObserver(entries => {
     threshold: 0.5 // 50% visible
 });
 items.forEach(item => educationObserver.observe(item));
+
+const socialLinks = document.querySelectorAll('.contact-options .social-links a');
+
+const aObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            aObserver.unobserve(entry.target); // only once
+        }
+    });
+}, {
+    threshold: 1
+});
+
+socialLinks.forEach(a => aObserver.observe(a));

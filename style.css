@@ -1,5 +1,12 @@
 @import url('https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css');
 
+@font-face {
+    font-family: 'Amorese';
+    src: url('assets/Amoresa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,6 +48,7 @@ body {
 
 nav {
     background: #242931;
+    /* background-color: rgba(255, 0, 0, 0.212); */
     transition: transform 0.3s ease;
     position: fixed;
     top: 0;
@@ -68,12 +76,54 @@ nav {
     display: none;
 }
 
-.logo a {
-    display: flex;
+.logo {
     width: 250px;
     /* background-color: rgba(25, 0, 255, 0.26); */
     padding: 10px;
-    font-size: 24px;
+    height: 100%;
+    margin-left: 50px;
+
+    .logo-link {
+        padding-top: 8px;
+        width: 213px;
+        height: 100%;
+        /* background-color: #01ffd5; */
+
+        #logo-txt {
+            /* background-color: #101d08b7; */
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+
+            width: auto;
+            height: 100%;
+            color: rgb(255, 255, 255);
+            font-family: 'Amorese', sans-serif;
+            font-size: 27px;
+            text-decoration: none;
+            line-height: 55px;
+            padding-right: 5px
+        }
+    }
+}
+
+/* Curtain overlay */
+#logo-txt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #242931;
+    z-index: 2;
+    transform: translateX(0);
+    transition: transform 1s ease-out;
+}
+
+/* Reveal class - slides curtain away */
+#logo-txt.reveal::before {
+    transform: translateX(100%);
 }
 
 .topbar {
@@ -84,7 +134,6 @@ nav {
     width: 50%;
     height: 80%;
     margin-left: auto;
-    /* background-color: rgba(25, 0, 255, 0.212); */
     list-style: none;
 }
 
@@ -539,6 +588,9 @@ h1.animate {
                 a {
                     width: 2.5rem;
                     height: 2.5rem;
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    transition: opacity 0.3s ease-out;
 
                     .social-icon:hover .circle-bg {
                         fill: black;
@@ -551,7 +603,23 @@ h1.animate {
     }
 }
 
+.contact-options .social-links a.animate {
+    animation: fadeInText 1s ease forwards;
+}
+
 @media(max-width: 750px) {
+    nav .logo {
+        margin-left: 2px;
+
+        .logo-link {
+            padding-top: 2px;
+
+            #logo-txt {
+                font-size: 20px;
+            }
+        }
+    }
+
     .hideOnMobile {
         display: none;
     }
