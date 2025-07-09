@@ -749,9 +749,9 @@ h1.animate {
         margin-bottom: 1rem;
     }
 
-    /* #profile-image {
-        width: 80%;
-    } */
+    #profile-image {
+        width: 320px;
+    }
 
     .card,
     .education-item,
