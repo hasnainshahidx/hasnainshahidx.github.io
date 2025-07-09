@@ -207,7 +207,7 @@ const carouObserver = new IntersectionObserver(
         entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                 entry.target.classList.add("visible");
-                carouObserver.unobserve(entry.target); // 🔒 Stop observing after first time
+                carouObserver.unobserve(entry.target);
             }
         });
     },
@@ -238,7 +238,7 @@ function nextSlide() {
  */
 function startAutoScroll() {
     stopAutoScroll(); // Prevent duplicate intervals
-    // intervalId = setInterval(nextSlide, 3000);
+    intervalId = setInterval(nextSlide, 3000);
 }
 
 /**
