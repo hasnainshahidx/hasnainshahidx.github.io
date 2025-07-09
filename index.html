@@ -31,8 +31,8 @@
     <meta name="twitter:title" content="Hasnain Shahid - Developer Portfolio">
     <meta name="twitter:description" content="Explore my personal projects and creative developer portfolio.">
     <meta name="twitter:image" content="https://hasnainshahidx.github.io/portfolio/assets/preview.png">
-    <meta name="twitter:site" content="@yourTwitterHandle">
-    <meta name="twitter:creator" content="@yourTwitterHandle">
+    <meta name="twitter:site" content="@hasnainshahidx">
+    <meta name="twitter:creator" content="@hasnainshahidx">
 
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://hasnainshahidx.github.io/portfolio/">
@@ -58,7 +58,7 @@
         <ul class="topbar navigation">
             <li class="hideOnMobile"><a href="#about">About</a></li>
             <li class="hideOnMobile"><a href="#projects">Projects</a></li>
-            <li class="hideOnMobile"><a href="#resume">Resume</a></li>
+            <li class="hideOnMobile"><a href="#services">Services</a></li>
             <li class="hideOnMobile"><a href="#contact">Contact</a></li>
             <li class="menu-button" onclick=showSidebar()>
                 <a>
@@ -86,7 +86,7 @@
             </li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
@@ -102,7 +102,10 @@
             </p>
 
             <div class="buttons">
-                <button onclick="window.open('assets/Hasnain_Shahid_Resume.pdf', '_blank')">My Resume</button>
+                <button
+                    onclick="window.open('https://drive.google.com/file/d/1cr7_F0EbEy2uMnjrGTQZv1w3gjvdYrDB/view?usp=sharing', '_blank', 'noopener,noreferrer')">
+                    My Resume
+                </button>
                 <button onclick="scrollToSection('contact')">Contact Me</button>
             </div>
         </div>
@@ -193,10 +196,45 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h1>Projects</h1>
+    <section id="projects" class="projects projects-section">
+        <h1>Recent Projects</h1>
+        <main id="carousel">
+            <div class="carou-item">
+                <img src="image.png" />
+                <h3 class="project-title">Web Automation Bot</h3>
+                <p class="project-about">A smart web automation bot that handles complex sites, bypasses CAPTCHA,
+                    preserves
+                    login sessions, and performs multi-step tasks reliably.</p>
+            </div>
+            <div class="carou-item">
+                <img src="image.png" />
+                <h3 class="project-title">Chrome Extension</h3>
+                <p class="project-about">A Chrome extension that auto-clicks Cloudflare CAPTCHAs, helping users automate
+                    browsing and streamline web automation tasks.</p>
+            </div>
+            <div class="carou-item">
+                <img src="image.png" />
+                <h3 class="project-title">Lorem Ipsum</h3>
+                <p class="project-about">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab dolorum qui itaque
+                    ducimus eos quo sint praesentium porro, vitae minima
+                </p>
+            </div>
+        </main>
+
+        <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
     </section>
-    <section id="resume" class="resume"> ... </section>
+    <section id="services" class="services">
+        <h1>Services</h1>
+        <ul>
+            <li>Data Entry and Management</li>
+            <li>Web Scraping and Automation</li>
+            <li>Custom Script Development</li>
+        </ul>
+    </section>
     <section id="contact" class="contact">
         <h1>Contact Me</h1>
         <p>Got a project to discuss or just want to say hi? My inbox is always open.</p>
@@ -223,7 +261,7 @@
                             </g>
                         </svg>
                     </a>
-                    <a href="https://x.com/" target="_blank" title="X Profile">
+                    <a href="https://x.com/hasnainshahidx" target="_blank" title="X Profile">
                         <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 48 48">
                             <!-- Circle Background (40px diameter) -->
                             <circle class="circle-bg" cx="24" cy="24" r="20" fill="#2f3236" />
