@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hasnainshahidx.github.io/sitemap.xml
