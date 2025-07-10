@@ -3,7 +3,7 @@
 **Personal Portfolio Website**  
 A sleek, responsive website to showcase my **projects**, **skills**, and **resume** — built using **HTML**, **CSS**, and **JavaScript**.
 
-![Website Preview](https://hasnainshahidx.github.io/portfolio/assets/preview.png)
+![Website Preview](https://hasnainshahidx.github.io/assets/preview.png)
 
 ---
 
@@ -28,7 +28,7 @@ A sleek, responsive website to showcase my **projects**, **skills**, and **resum
 
 ## 📍 Live Demo
 
-👉 [Visit Portfolio](https://hasnainshahidx.github.io/portfolio)  
+👉 [Visit Portfolio](https://hasnainshahidx.github.io/)  
 
 ---
 
