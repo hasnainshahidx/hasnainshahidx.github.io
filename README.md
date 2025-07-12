@@ -40,6 +40,8 @@ Feel free to reach out!
 - 💬 [WhatsApp Chat](https://wa.me/923011234567?text=Hey%21%20Loved%20your%20work.%20Wanted%20to%20chat%20about%20something%20%3A%29)  
 - 🔗 [LinkedIn](https://linkedin.com/in/hasnain-shahid)
 
+---
+
 ⚠️ **License Notice**  
 This project is protected under "All Rights Reserved".  
 Please **do not reuse any part** of the code or design.
