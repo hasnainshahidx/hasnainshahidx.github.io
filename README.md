@@ -43,3 +43,6 @@ Feel free to reach out!
 ---
 
 > Built with ❤️ by **Hasnain Shahid**
+
+⚠️ This project is for demonstration purposes only.  
+Do not reuse any part of the code or design without permission.
