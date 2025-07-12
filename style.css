@@ -177,7 +177,8 @@ nav a:hover {
     }
 }
 
-h1 {
+h1,
+.section-heading {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease-out;
@@ -186,7 +187,8 @@ h1 {
     margin-bottom: 40px;
 }
 
-h1.animate {
+h1.animate,
+.section-heading.animate {
     animation: fadeInText 1s ease forwards;
 }
 

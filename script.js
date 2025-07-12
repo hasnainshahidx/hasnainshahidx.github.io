@@ -1,8 +1,9 @@
+// for contact button
 function scrollToSection(section) {
     document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
 }
 
-const headings = document.querySelectorAll('h1');
+const headings = document.querySelectorAll('.section-heading');
 const h1Observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
