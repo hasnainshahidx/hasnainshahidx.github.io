@@ -1,4 +1,4 @@
-# 🌐 hasnainshahid.github.io
+# 🌐 hasnainshahidx.github.io
 
 **Personal Portfolio Website**  
 A sleek, responsive website to showcase my **projects**, **skills**, and **resume** — built using **HTML**, **CSS**, and **JavaScript**.
@@ -37,7 +37,7 @@ A sleek, responsive website to showcase my **projects**, **skills**, and **resum
 Feel free to reach out!
 
 - 📧 hasnainshahid822@gmail.com  
-- 💬 [WhatsApp Chat](https://wa.me/923011234567?text=Hey%21%20Loved%20your%20work.%20Wanted%20to%20chat%20about%20something%20%3A%29)  
+- 💬 [WhatsApp Chat](https://wa.me/923193713260?text=Hey%21%20Loved%20your%20work.%20Wanted%20to%20chat%20about%20something%20%3A%29)  
 - 🔗 [LinkedIn](https://linkedin.com/in/hasnain-shahid)
 
 ---
